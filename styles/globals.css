@@ -1,26 +1,66 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --primary-color: hsl(180, 95%, 23%);
+  --primary-color-dark: hsl(180, 95%, 28%);
+  --lighter-gray: hsl(0, 0%, 72%);
+  --light-gray: hsl(0, 0%, 83%);
+  --medium-gray: #555;
+  --dark-gray: hsl(0, 0%, 23%);
+  --white: #fff;
+  --bg-dark-main: hsl(0, 0%, 15%);
+  --text-color-dark: rgb(229 231 235 / 1);
+  --secondary-dark-bg: hsl(0, 0%, 25%);
+  --bg-main: #f1f1f1;
+
+  --bg-hero: #e6f4f1;
+  /* --lighter-gray: hsl(158, 15%, 58%); */
+  /* --light-gray: hsl(158, 15%, 68%); */
+
+  --light-blue: hsl(202, 60%, 47%);
+  --max-width: 1200px;
+  --light-img-bg: rgba(3, 114, 114, 0.3);
+  --dark-img-bg: rgba(3, 114, 114, 0.8);
+  --red: hsl(0, 100%, 60%);
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--medium-gray);
+}
+
+a {
+  text-decoration: none;
+}
+
+.hero-image {
+  position: relative;
+  border-radius: 50%;
+}
+
+.activeIndex {
+  background-color: var(--primary-color);
+}
+
+.box-shadow-sm {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.box-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
