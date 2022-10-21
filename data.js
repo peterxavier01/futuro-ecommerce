@@ -21,9 +21,9 @@ import TrendingTwo from "./public/pic14.jpg";
 import TrendingThree from "./public/pic12.jpg";
 import TrendingFour from "./public/pic18.jpg";
 
-import StackOne from "./public/pic19.png";
-import StackTwo from "./public/pic21.png";
-import StackThree from "./public/pic22.png";
+import StackOne from "./public/watch_1.webp";
+import StackTwo from "./public/watch_2.webp";
+import StackThree from "./public/watch_3.webp";
 
 import TopOne from "./public/pic20.png";
 import TopTwo from "./public/pic23.png";

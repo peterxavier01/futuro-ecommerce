@@ -6,7 +6,7 @@ export const Container = styled.div`
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   background-color: ${(props) =>
     props.isScrolled ? props.theme.bgNavScrolled : props.theme.bgHero};
 `;
@@ -132,7 +132,7 @@ export const NavLinks = styled.div`
 `;
 
 export const Nav = styled.div`
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 60px;
   background-color: ${(props) =>
@@ -145,7 +145,6 @@ export const Nav = styled.div`
 
   ${tabletUp({
     width: "0% !important",
-    position: "absolute",
     top: "-10px",
     right: "60%",
   })}

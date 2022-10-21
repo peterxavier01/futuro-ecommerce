@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { BsUpload } from "react-icons/bs";
 
 import Banner from "../components/Banner";
-import { cartItems } from "../data";
 import ProductImg from "../public/camera-placeholder.png";
 import { fadeInLeft, fadeInRight } from "../utils/animations";
 import {
@@ -23,6 +22,7 @@ import {
   Select,
   Btn,
   Label,
+  TextArea,
   InputContainer,
   Category,
 } from "../styles/new-product.styles";
@@ -45,11 +45,11 @@ const NewProduct = () => {
   const toastId = useRef(null);
 
   const resetData = () => {
-    setData((prev) => {
-      prev = null || {};
-    });
+    setData("" || null);
     setFile("");
   };
+
+  console.log(data);
 
   useEffect(() => {
     const uploadFile = () => {
@@ -186,6 +186,12 @@ const NewProduct = () => {
                       id="name"
                       onChange={handleInput}
                     />
+                    <TextArea
+                      cols={2}
+                      id="productDesc"
+                      placeholder="Product Description"
+                      onChange={handleInput}
+                    ></TextArea>
                   </InputContainer>
                   <InputContainer>
                     <Input
@@ -240,6 +246,12 @@ const NewProduct = () => {
                     <option value="discount">Discount</option>
                     <option value="top">Top</option>
                   </Select>
+                  <Input
+                    type="text"
+                    id="tags"
+                    placeholder="Tags"
+                    onChange={handleInput}
+                  />
                   <Btn
                     type="submit"
                     disabled={percent !== null && percent < 100}

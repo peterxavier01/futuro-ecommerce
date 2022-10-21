@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import Header from "./Header";
-import dynamic from "next/dynamic";
 
 import { A11y, Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,13 +11,13 @@ import "swiper/css/pagination";
 
 import { tabletUp } from "../responsive";
 
-const TopCard = ({ img, title, price }) => (
+const TopCard = ({ img, title, price, id }) => (
   <CardWrapper>
     <Card>
       <CardImgContainer>
         <Image src={img} alt="product" height={300} width={300} />
       </CardImgContainer>
-      <Link href="/product/553">
+      <Link href={`/product/${id}`}>
         <a>
           <Btn>Shop Now</Btn>
         </a>
@@ -81,15 +80,14 @@ const TopCategories = ({ products }) => {
           >
             {products &&
               JSON.parse(products)
-                .filter(
-                  (filterProducts) => filterProducts.category === "top"
-                )
+                .filter((filterProducts) => filterProducts.category === "top")
                 .map((item) => (
                   <SwiperSlide key={item.id}>
                     <TopCard
                       img={item.img}
                       title={item.name}
                       price={item.price}
+                      id={item.id}
                     />
                   </SwiperSlide>
                 ))}

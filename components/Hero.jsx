@@ -186,7 +186,7 @@ const NavBtn = styled.div`
   border: 1px solid ${(props) => props.theme.primaryColor};
   width: 15px;
   height: 15px;
-  rotate: 45deg;
+  transform: rotate(45deg);
 
   :hover {
     background-color: ${(props) => props.theme.primaryColor};

@@ -163,9 +163,11 @@ const ProductWrapper = styled.div`
 `;
 
 const ProductStack = styled.div`
-  display: grid;
   gap: 1em;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: none;
+
+  ${tabletUp({ display: "grid" })}
 `;
 
 const ProductImgContainer = styled.div`
@@ -396,4 +398,5 @@ const BtnIcon = styled.div`
 
 const RelatedProductsWrapper = styled.div`
   background-color: ${(props) => props.theme.secondaryBg};
+  padding-inline: 1em;
 `;

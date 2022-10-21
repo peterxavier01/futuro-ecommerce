@@ -120,6 +120,11 @@ const Navbar = () => {
                 {navLinks.map((item) => (
                   <li
                     key={item.id}
+                    onClick={() => {
+                      if (isTabletView <= 768) {
+                        handleNavToggle();
+                      }
+                    }}
                     className={
                       router.pathname === `${item.path}` ? "active-link" : ""
                     }

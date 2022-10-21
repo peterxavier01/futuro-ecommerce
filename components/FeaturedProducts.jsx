@@ -9,10 +9,10 @@ import { tabletUp } from "../responsive";
 import { motion } from "framer-motion";
 import { fadeInUp } from "../utils/animations";
 
-const FeaturedCard = ({ src, name, price, code }) => (
+const FeaturedCard = ({ src, name, price, code, id }) => (
   <Card>
     <CardImgContainer>
-      <Link href="/product/123">
+      <Link href={`/product/${id}`}>
         <a>
           <Image src={src} placeholder="empty" height={280} width={400} />
         </a>
@@ -64,6 +64,7 @@ const FeaturedProducts = ({ products }) => {
               name={product.name}
               code={product.voucherCode}
               price={product.price}
+              id={product.id}
             />
           ))}
       </Wrapper>

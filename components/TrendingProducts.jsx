@@ -8,8 +8,8 @@ import Header from "./Header";
 import { productStack, trendingProducts } from "../data";
 import { tabletUp } from "../responsive";
 
-import DiscountOne from "../public/pic20.png";
-import DiscountTwo from "../public/pic23.png";
+import DiscountOne from "../public/headphones_b_3.webp";
+import DiscountTwo from "../public/headphones_b_2.webp";
 import { fadeIn, fadeInDown, fadeInUp } from "../utils/animations";
 
 const TrendingCard = () => (
@@ -65,13 +65,7 @@ const TrendingProducts = () => {
                   <a> Shop Now</a>
                 </Link>
               </DiscountLink>
-              <Image
-                src={DiscountTwo}
-                alt="discounted product"
-                height={450}
-                objectFit="cover"
-                objectPosition="bottom"
-              />
+              <Image src={DiscountTwo} alt="discounted product" />
             </Discount>
             <StackContainer variants={fadeInUp}>
               {productStack.map((item) => (
@@ -79,7 +73,7 @@ const TrendingProducts = () => {
                   <StackImgContainer>
                     <Link href="/product/333">
                       <a>
-                        <Image src={item.src} height={450} objectFit="cover" />
+                        <Image src={item.src} objectFit="cover" />
                       </a>
                     </Link>
                   </StackImgContainer>
@@ -200,11 +194,6 @@ const StackImgContainer = styled.div`
     transition: all 0.3s ease-in-out;
     scale: 0.98;
   }
-
-  ${tabletUp({
-    width: "120px",
-    height: "100px",
-  })}
 `;
 
 const Card = styled(motion.div)`

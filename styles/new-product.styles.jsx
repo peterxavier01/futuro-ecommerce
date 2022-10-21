@@ -138,6 +138,23 @@ export const Input = styled.input`
   }
 `;
 
+export const TextArea = styled.textarea`
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em;
+  min-height: 150px;
+  resize: vertical;
+  border: 1px solid ${(props) => props.theme.textColorDarker};
+  background-color: ${(props) => props.theme.bgInverse};
+  border-radius: 5px;
+  color: ${(props) => props.theme.textColor};
+
+  :focus {
+    border-color: transparent;
+    outline: 2px solid ${(props) => props.theme.primaryColor};
+  }
+`;
+
 export const Select = styled.select`
   width: 100%;
   padding: 1em;

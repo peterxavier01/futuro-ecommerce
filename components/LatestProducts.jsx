@@ -9,7 +9,7 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { desktopUp, tabletUp } from "../responsive";
 import { fadeInUp } from "../utils/animations";
 
-const LatestCards = ({ src, name, price, slashPrice }) => (
+const LatestCards = ({ src, name, price, slashPrice, id }) => (
   <Card
     variants={fadeInUp}
     initial="hidden"
@@ -17,7 +17,7 @@ const LatestCards = ({ src, name, price, slashPrice }) => (
     viewport={{ once: true }}
   >
     <CardImgContainer>
-      <Link href="/product/223">
+      <Link href={`/product/${id}`}>
         <a>
           <Image src={src} height={280} width={400} />
         </a>
@@ -46,17 +46,19 @@ const LatestProducts = ({ products }) => {
     <Container>
       <Header text="Latest Products" />
       <Wrapper>
-        {products && JSON.parse(products)
-          .filter((filterProducts) => filterProducts.category === "latest")
-          .map((product) => (
-            <LatestCards
-              key={product.id}
-              name={product.name}
-              price={product.price}
-              slashPrice={product.discPrice}
-              src={product.img}
-            />
-          ))}
+        {products &&
+          JSON.parse(products)
+            .filter((filterProducts) => filterProducts.category === "latest")
+            .map((product) => (
+              <LatestCards
+                key={product.id}
+                name={product.name}
+                price={product.price}
+                slashPrice={product.discPrice}
+                src={product.img}
+                id={product.id}
+              />
+            ))}
       </Wrapper>
     </Container>
   );
